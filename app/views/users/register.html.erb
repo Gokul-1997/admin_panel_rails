@@ -1,0 +1,44 @@
+  
+
+<body class="row" >
+<div class="col-md-5">
+  
+</div>
+
+
+<div class="col-md-2"> 
+ <h2 >Register</h2>
+ <%= form_for :user,url: { action: "reg" },method: :post do |f| %>
+  
+
+  <div class="form-group">
+     <%= f.label :email %><br>
+  <%= f.text_field :email, class: "form-control" ,type: "email",placeholder: "Enter your E-Mail" %> 
+
+  </div>
+
+  <div class="form-group">
+      <%= f.label :password %><br>
+  <%= f.text_field :password, class: "form-control", type: "password",placeholder: "Enter your Password" %> 
+
+  </div>
+  <div class="form-group">
+      <%= f.label :user_role  %><br>
+  <select name="user[user_role]" id="user_user_role"  class="form-control" style="width: 215px;">
+<option value="">Select Role</option>
+  <option value="user">user</option>
+<option value="admin">admin</option>
+</select>
+</div>
+
+ 
+ <%= f.submit "Register", class: "btn btn-info" %>  <br>
+ <br>
+Already have an account?<br>
+ <%= link_to "sign in",users_login_path %>
+<!--   <button class="btn btn-info">sign in</button>
+ -->   <% end %>
+</div>
+<div class="col-md-5"></div>
+
+</body>
